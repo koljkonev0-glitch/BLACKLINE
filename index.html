@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLACKLINE — The Character Issue · Барбершоп</title>
+  <meta name="description" content="BLACKLINE — демонстрационный сайт премиального барбершопа: услуги и цены, мастера, галерея и форма записи в демо-режиме. Вымышленный проект для портфолио.">
+  <meta name="theme-color" content="#14352f">
+  <meta property="og:title" content="BLACKLINE — Premium Barbershop">
+  <meta property="og:description" content="Точность в деталях. Уверенность в каждом движении. Демонстрационный проект.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c231f'/%3E%3Cpath d='M6 22h20' stroke='%23873247' stroke-width='3'/%3E%3Ctext x='16' y='18' font-size='14' font-weight='700' text-anchor='middle' fill='%23F5F1EB' font-family='Arial,sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/hero.webp" imagesrcset="images/hero-480.webp 480w, images/hero.webp 1024w" imagesizes="(max-width: 700px) 100vw, 70vw" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editorial.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- ВАЖНО: у .header нет backdrop-filter / filter / transform — иначе fixed-меню внутри него «ломается» -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="BLACKLINE — на главную">BLACK<b>LINE</b></a>
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#masters">Мастера</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="mag-masthead" aria-hidden="true">BLACKLINE</div>
+      <div class="issue-line"><span>Журнал мужского стиля</span><span>Осень 2026 · № 01</span><span>The Character Issue</span></div>
+      <div class="cover">
+        <div class="photo has-image hero__bg" data-photo="hero" data-editorial="THE COVER" data-ph="hero.jpg" role="img" aria-label="Мужчина в кожаном кресле барбершопа — иллюстрация, созданная ИИ"><img src="images/hero.webp" srcset="images/hero-480.webp 480w, images/hero.webp 1024w" sizes="(max-width: 700px) 100vw, 70vw" width="1024" height="1536" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
+        <div class="hero__overlay"></div>
+        <p class="cover__index" aria-hidden="true">THE<br><i>CHARACTER</i><br>ISSUE / 01</p>
+        <div class="hero__content">
+          <p class="eyebrow">BLACKLINE · Барбершоп</p>
+          <h1 id="hero-title"><span>Стиль —</span><span class="hero__connector">это</span><span class="outline">характер.</span></h1>
+          <p class="hero__sub">Хорошая стрижка не меняет тебя.<br>Она расставляет акценты.</p>
+          <div class="hero__actions"><a href="#booking" class="btn">Записаться ↗</a><a href="#services" class="cover__text-link">Смотреть услуги <span>↓</span></a></div>
+        </div>
+        <p class="cover__credit">Точность в деталях.<br>Уверенность в каждом движении.</p>
+      </div>
+      <nav class="contents-strip" aria-label="В этом выпуске">
+        <span class="contents-strip__label">В этом<br><i>выпуске</i></span>
+        <a href="#about"><span>01 / Место</span><strong>Время для себя</strong><b aria-hidden="true">↗</b></a>
+        <a href="#masters"><span>02 / Люди</span><strong>Почерк мастера</strong><b aria-hidden="true">↗</b></a>
+        <a href="#gallery"><span>03 / Детали</span><strong>Искусство формы</strong><b aria-hidden="true">↗</b></a>
+      </nav>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <div class="about__media reveal">
+          <div class="photo has-image about__photo" data-photo="interior" data-editorial="THE SPACE" data-ph="interior.jpg" role="img" aria-label="Интерьер барбершопа BLACKLINE"><img src="images/interior.webp" srcset="images/interior-480.webp 480w, images/interior.webp 1122w" sizes="(max-width: 700px) 100vw, 60vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></div>
+          <div class="about__badge"><strong>2018</strong><span>год основания<br>(вымышленный)</span></div>
+        </div>
+        <div class="about__text reveal">
+          <p class="eyebrow"><span>01</span> О нас</p>
+          <h2 id="about-title">Время<br>для <em>себя.</em></h2>
+          <p>BLACKLINE начался с одного кресла в бывшей слесарной мастерской. Трое друзей, уставших от конвейерных салонов, захотели сделать место, где мужчину не торопят: сначала разговор о форме и образе жизни, потом ножницы.</p>
+          <p>Сегодня это команда мастеров, которые регулярно учатся, работают с профессиональной косметикой и считают, что хорошая стрижка — это точность до миллиметра и спокойствие в кресле.</p>
+          <p class="note">Бренд, история и даты вымышлены и созданы для демонстрационного проекта.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="perks">
+          <li class="perk reveal">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="13" cy="13" r="5"/><circle cx="13" cy="35" r="5"/><path d="M17 16l22 20M17 32L39 12"/></svg>
+            <h3>Опытные мастера</h3>
+            <p>Средний стаж команды — больше пяти лет.</p>
+          </li>
+          <li class="perk reveal">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="15" r="7"/><path d="M6 40c0-8 6-13 14-13M28 35l5 5 10-11"/></svg>
+            <h3>Индивидуальный подход</h3>
+            <p>Подбираем форму под тип волос и черты лица.</p>
+          </li>
+          <li class="perk reveal">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="16" y="19" width="16" height="22" rx="3"/><rect x="20" y="11" width="8" height="8"/><path d="M22 6h4M16 28h16"/></svg>
+            <h3>Профессиональная косметика</h3>
+            <p>Средства для стайлинга и ухода за бородой.</p>
+          </li>
+          <li class="perk reveal">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5c4 8 11 12 11 21a11 11 0 0 1-22 0c0-4 2-7 5-10 1 3 3 5 5 5-1-6-1-10 1-16z"/></svg>
+            <h3>Атмосфера и комфорт</h3>
+            <p>Кожа, дерево, хорошая музыка и свежий кофе.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section--alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span>02</span> Услуги и цены</p>
+          <h2 id="services-title">Искусство<br><em>точной формы.</em></h2>
+          <p class="note">Цены и длительность демонстрационные.</p>
+        </div>
+        <div class="services-layout">
+          <figure class="service-story"><div class="photo has-image" data-photo="servicePhoto" data-editorial="THE CRAFT" role="img" aria-label="Мастер за работой — иллюстрация, созданная ИИ"><img src="images/process.webp" srcset="images/process-480.webp 480w, images/process.webp 1122w" sizes="(max-width: 700px) 100vw, 60vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></div><figcaption><span>THE CRAFT / 02</span><p>Уверенная рука.<br><em>Твоя форма.</em></p></figcaption></figure>
+        <ul class="services">
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">01</span>
+            <h3>Мужская стрижка</h3>
+            <p>Консультация, стрижка ножницами и машинкой, мытьё головы и укладка.</p>
+            <div class="service__meta"><span class="price">1 500 ₽</span><span class="time">60 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Мужская стрижка">Записаться</button>
+          </li>
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">02</span>
+            <h3>Стрижка машинкой</h3>
+            <p>Быстрая аккуратная стрижка под насадку с чёткой окантовкой.</p>
+            <div class="service__meta"><span class="price">900 ₽</span><span class="time">30 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Стрижка машинкой">Записаться</button>
+          </li>
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">03</span>
+            <h3>Оформление бороды</h3>
+            <p>Моделирование формы, контур, горячее полотенце и уход маслом.</p>
+            <div class="service__meta"><span class="price">800 ₽</span><span class="time">40 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Оформление бороды">Записаться</button>
+          </li>
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">04</span>
+            <h3>Стрижка + борода</h3>
+            <p>Комплекс: полная стрижка и оформление бороды — выгоднее, чем по отдельности.</p>
+            <div class="service__meta"><span class="price">2 100 ₽</span><span class="time">90 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Стрижка + борода">Записаться</button>
+          </li>
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">05</span>
+            <h3>Королевское бритьё</h3>
+            <p>Бритьё опасной бритвой с горячим полотенцем, пеной и бальзамом.</p>
+            <div class="service__meta"><span class="price">1 200 ₽</span><span class="time">45 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Королевское бритьё">Записаться</button>
+          </li>
+          <li class="service reveal">
+            <span class="service__num" aria-hidden="true">06</span>
+            <h3>Камуфляж седины</h3>
+            <p>Деликатное тонирование волос и бороды без эффекта «покраски».</p>
+            <div class="service__meta"><span class="price">1 000 ₽</span><span class="time">30 мин</span></div>
+            <button type="button" class="btn btn--small" data-service="Камуфляж седины">Записаться</button>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MASTERS -->
+    <section class="section" id="masters" aria-labelledby="masters-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span>03</span> Наши мастера</p>
+          <h2 id="masters-title">Лица <em>BLACKLINE.</em></h2>
+          <p class="note">Мастера — вымышленные персонажи демонстрационного проекта.</p>
+        </div>
+        <ul class="masters">
+          <li class="master reveal">
+            <div class="photo has-image master__photo" data-photo="barber1" data-editorial="PORTRAIT I" data-ph="barber1.jpg" role="img" aria-label="Мастер Александр"><img src="images/barber1.webp" srcset="images/barber1-480.webp 480w, images/barber1.webp 1122w" sizes="(max-width: 700px) 100vw, 32vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></div>
+            <div class="master__body">
+              <h3>Александр</h3>
+              <p class="master__role">Старший барбер</p>
+              <p class="master__spec">Классические стрижки и королевское бритьё</p>
+              <p class="master__exp">Опыт 8 лет</p>
+              <button type="button" class="btn btn--small" data-master="Александр">Записаться</button>
+            </div>
+          </li>
+          <li class="master reveal">
+            <div class="photo has-image master__photo" data-photo="barber2" data-editorial="PORTRAIT II" data-ph="barber2.jpg" role="img" aria-label="Мастер Максим"><img src="images/barber2.webp" srcset="images/barber2-480.webp 480w, images/barber2.webp 1122w" sizes="(max-width: 700px) 100vw, 32vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></div>
+            <div class="master__body">
+              <h3>Максим</h3>
+              <p class="master__role">Барбер</p>
+              <p class="master__spec">Фейды и современные стрижки</p>
+              <p class="master__exp">Опыт 5 лет</p>
+              <button type="button" class="btn btn--small" data-master="Максим">Записаться</button>
+            </div>
+          </li>
+          <li class="master reveal">
+            <div class="photo has-image master__photo" data-photo="barber3" data-editorial="PORTRAIT III" data-ph="barber3.jpg" role="img" aria-label="Мастер Даниил"><img src="images/barber3.webp" srcset="images/barber3-480.webp 480w, images/barber3.webp 1122w" sizes="(max-width: 700px) 100vw, 32vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></div>
+            <div class="master__body">
+              <h3>Даниил</h3>
+              <p class="master__role">Барбер</p>
+              <p class="master__spec">Борода, окантовка и камуфляж седины</p>
+              <p class="master__exp">Опыт 4 года</p>
+              <button type="button" class="btn btn--small" data-master="Даниил">Записаться</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span>04</span> Галерея</p>
+          <h2 id="gallery-title">Всё дело<br><em>в деталях.</em></h2>
+        </div>
+        <ul class="gallery">
+          <li class="gallery__item gallery__item--a reveal"><button type="button" class="gallery__btn" data-photo-key="gallery1" data-caption="Интерьер зала" aria-label="Открыть фото: интерьер зала"><span class="photo has-image" data-photo="gallery1" data-editorial="THE DETAILS" data-ph="gallery1.jpg"><img src="images/interior.webp" srcset="images/interior-480.webp 480w, images/interior.webp 1122w" sizes="(max-width: 700px) 100vw, 60vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Интерьер зала</span></button></li>
+          <li class="gallery__item gallery__item--b reveal"><button type="button" class="gallery__btn" data-photo-key="gallery2" data-caption="Рабочие инструменты" aria-label="Открыть фото: рабочие инструменты"><span class="photo has-image" data-photo="gallery2" data-editorial="THE DETAILS" data-ph="gallery2.jpg"><img src="images/tools.webp" srcset="images/tools-480.webp 480w, images/tools.webp 1536w" sizes="(max-width: 700px) 100vw, 60vw" width="1536" height="1024" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Рабочие инструменты</span></button></li>
+          <li class="gallery__item gallery__item--c reveal"><button type="button" class="gallery__btn" data-photo-key="gallery3" data-caption="Процесс стрижки" aria-label="Открыть фото: процесс стрижки"><span class="photo has-image" data-photo="gallery3" data-editorial="THE DETAILS" data-ph="gallery3.jpg"><img src="images/process.webp" srcset="images/process-480.webp 480w, images/process.webp 1122w" sizes="(max-width: 700px) 100vw, 60vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Процесс стрижки</span></button></li>
+          <li class="gallery__item gallery__item--d reveal"><button type="button" class="gallery__btn" data-photo-key="gallery4" data-caption="Наши барберы" aria-label="Открыть фото: наши барберы"><span class="photo has-image" data-photo="gallery4" data-editorial="THE DETAILS" data-ph="gallery4.jpg"><img src="images/barber1.webp" srcset="images/barber1-480.webp 480w, images/barber1.webp 1122w" sizes="(max-width: 700px) 100vw, 60vw" width="1122" height="1402" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Наши барберы</span></button></li>
+          <li class="gallery__item gallery__item--e reveal"><button type="button" class="gallery__btn" data-photo-key="gallery5" data-caption="Детали оформления" aria-label="Открыть фото: детали оформления"><span class="photo has-image" data-photo="gallery5" data-editorial="THE DETAILS" data-ph="gallery5.jpg"><img src="images/details.webp" srcset="images/details-480.webp 480w, images/details.webp 1536w" sizes="(max-width: 700px) 100vw, 60vw" width="1536" height="1024" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Детали оформления</span></button></li>
+          <li class="gallery__item gallery__item--f reveal"><button type="button" class="gallery__btn" data-photo-key="gallery6" data-caption="Готовые причёски" aria-label="Открыть фото: готовые мужские причёски"><span class="photo has-image" data-photo="gallery6" data-editorial="THE DETAILS" data-ph="gallery6.jpg"><img src="images/hairstyle.webp" srcset="images/hairstyle-480.webp 480w, images/hairstyle.webp 1536w" sizes="(max-width: 700px) 100vw, 60vw" width="1536" height="1024" alt="" loading="lazy" decoding="async"></span><span class="gallery__cap" aria-hidden="true">Готовые причёски</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section" id="booking" aria-labelledby="booking-title">
+      <div class="container booking">
+        <div class="booking__intro reveal">
+          <p class="eyebrow"><span>05</span> Запись</p>
+          <h2 id="booking-title">Записаться на стрижку</h2>
+          <p class="demo-banner" role="note"><strong>Демо-режим.</strong> Запись не создаёт реального бронирования. Данные никуда не отправляются и не сохраняются.</p>
+          <p class="booking__hint" id="chosen" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="booking__panel reveal">
+          <form class="form" id="booking-form" novalidate autocomplete="off" aria-describedby="form-demo">
+            <p class="form__demo" id="form-demo">Демонстрационная форма — реальной записи не происходит.</p>
+
+            <div class="field" data-field="name">
+              <label for="f-name">Имя</label>
+              <input id="f-name" name="name" type="text" maxlength="40" autocomplete="off" placeholder="Как к вам обращаться" required aria-describedby="e-name">
+              <p class="field__error" id="e-name"></p>
+            </div>
+
+            <div class="field" data-field="phone">
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" maxlength="22" autocomplete="off" placeholder="+7 (900) 000-00-00" required aria-describedby="e-phone">
+              <p class="field__error" id="e-phone"></p>
+            </div>
+
+            <div class="field" data-field="service">
+              <label for="f-service">Услуга</label>
+              <select id="f-service" name="service" required aria-describedby="e-service">
+                <option value="">Выберите услугу</option>
+                <option>Мужская стрижка</option>
+                <option>Стрижка машинкой</option>
+                <option>Оформление бороды</option>
+                <option>Стрижка + борода</option>
+                <option>Королевское бритьё</option>
+                <option>Камуфляж седины</option>
+              </select>
+              <p class="field__error" id="e-service"></p>
+            </div>
+
+            <div class="field" data-field="master">
+              <label for="f-master">Мастер</label>
+              <select id="f-master" name="master" required aria-describedby="e-master">
+                <option value="">Выберите мастера</option>
+                <option>Любой мастер</option>
+                <option>Александр</option>
+                <option>Максим</option>
+                <option>Даниил</option>
+              </select>
+              <p class="field__error" id="e-master"></p>
+            </div>
+
+            <div class="field" data-field="date">
+              <label for="f-date">Дата</label>
+              <input id="f-date" name="date" type="date" required aria-describedby="e-date">
+              <p class="field__error" id="e-date"></p>
+            </div>
+
+            <div class="field" data-field="time">
+              <label for="f-time">Время</label>
+              <select id="f-time" name="time" required aria-describedby="e-time">
+                <option value="">Выберите время</option>
+              </select>
+              <p class="field__error" id="e-time"></p>
+            </div>
+
+            <button type="submit" class="btn form__submit">Записаться</button>
+            <p class="form__note">Нажимая кнопку, вы оформляете демонстрационную запись. Ничего не отправляется.</p>
+          </form>
+
+          <div class="success" id="success" hidden>
+            <h3 id="success-title" tabindex="-1">Демонстрационная запись успешно оформлена</h3>
+            <dl class="success__list" id="success-list"></dl>
+            <p class="demo-banner"><strong>Это демо.</strong> Реального бронирования не создано, данные не сохранены.</p>
+            <button type="button" class="btn btn--ghost" id="new-booking">Новая демо-запись</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span>06</span> Отзывы</p>
+          <h2 id="reviews-title">После <em>визита.</em></h2>
+          <p class="note">Ниже — вымышленные примеры отзывов для демонстрационного проекта, а не мнения реальных клиентов.</p>
+        </div>
+        <ul class="reviews">
+          <li class="review reveal">
+            <span class="tag">Вымышленный пример</span>
+            <p class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>Пришёл с идеей, ушёл с формой, о которой не догадывался. Мастер объяснил каждый шаг, стрижка держится уже пятую неделю.</blockquote>
+            <p class="review__author">Игорь К. <span>(вымышленный персонаж)</span></p>
+          </li>
+          <li class="review reveal">
+            <span class="tag">Вымышленный пример</span>
+            <p class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>Королевское бритьё — отдельное удовольствие. Горячее полотенце, тишина, никакой спешки. Вернусь обязательно.</blockquote>
+            <p class="review__author">Денис М. <span>(вымышленный персонаж)</span></p>
+          </li>
+          <li class="review reveal">
+            <span class="tag">Вымышленный пример</span>
+            <p class="stars" role="img" aria-label="Оценка 4 из 5"><span aria-hidden="true">★★★★</span><span aria-hidden="true" class="stars__off">★</span></p>
+            <blockquote>Аккуратно оформили бороду и посоветовали уход. Один минус — хочется больше свободных вечерних слотов.</blockquote>
+            <p class="review__author">Артём В. <span>(вымышленный персонаж)</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts">
+        <div class="contacts__main reveal">
+          <p class="eyebrow"><span>07</span> Контакты</p>
+          <h2 id="contacts-title">До <em>встречи.</em></h2>
+          <dl class="info">
+            <div><dt>Адрес (вымышленный)</dt><dd>г. Примерск, ул. Демонстрационная, 7</dd></div>
+            <div><dt>Телефон (демо)</dt><dd>+7 (000) 000-00-00</dd></div>
+            <div><dt>Часы работы</dt><dd>Ежедневно: 10:00–21:00</dd></div>
+          </dl>
+          <a href="#booking" class="btn">Записаться</a>
+        </div>
+        <div class="contacts__side reveal">
+          <p class="eyebrow">Соцсети (условные)</p>
+          <ul class="socials">
+            <li><span>Telegram</span></li>
+            <li><span>Instagram</span></li>
+            <li><span>VK</span></li>
+          </ul>
+          <p class="note">Ссылок нет: это демонстрационный проект. BLACKLINE — вымышленный барбершоп и в реальности не существует.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo" aria-label="BLACKLINE — наверх">BLACK<b>LINE</b></a>
+        <p class="footer__slogan">Точность в деталях.</p>
+      </div>
+      <nav aria-label="Навигация в подвале">
+        <ul class="footer__list">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#masters">Мастера</a></li>
+          <li><a href="#booking">Запись</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <p class="footer__demo">Демонстрационный проект. Все названия, адреса, цены и отзывы вымышлены. Изображения созданы с помощью ИИ.</p>
+    </div>
+    <div class="container footer__bottom"><p>© 2026 BLACKLINE. Проект для портфолио.</p></div>
+  </footer>
+
+  <button type="button" class="to-top" id="to-top" aria-label="Вернуться наверх" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Просмотр фотографии">
+    <button type="button" class="lightbox__close" id="lb-close" aria-label="Закрыть">×</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Предыдущее фото">‹</button>
+    <figure class="lightbox__figure">
+      <div class="photo lightbox__photo" id="lb-photo" role="img" aria-label=""></div>
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Следующее фото">›</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
